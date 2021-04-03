@@ -1,16 +1,26 @@
-# This is a sample Python script.
+from pynput.keyboard import Controller
+from time import sleep
+import sys
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print("Started")
+    keyboard = Controller()
+    while True:
+        import keyboard
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        while True:
+            sleep(.5)
+
+            if keyboard.is_pressed('x'):
+                sys.exit()
+
+            if keyboard.is_pressed('q'):
+                keyboard.press("w")
+
+            if keyboard.is_pressed('ctrl+q'):
+                keyboard.release("w")
+
+            if keyboard.is_pressed('e'):
+                break
+
+    print("done")
